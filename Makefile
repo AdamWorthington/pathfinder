@@ -14,18 +14,13 @@ CPP_OBJECTS     := $(patsubst $(PRJ_SOURCE_CODE)/%.cpp,$(PRJ_OBJECTS_DIR)/%.o, $
 ### Targets ###
 # Complete build
 all: $(CPP_OBJECTS)
-	@echo "Executing target '$@' for project '${PRJ_NAME}'"
-
 	@g++ -o ${PRJ_OUTPUT_DIR}/${PRJ_NAME}.elf $(CPP_OBJECTS)
 
-	@echo "Finished executing the target '$@' for project '${PRJ_NAME}'"
+run:
+	${PRJ_OUTPUT_DIR}/${PRJ_NAME}.elf
 
 clean:
-	@echo "Executing target '$@' for project '${PRJ_NAME}'"
-
 	rm -rf ${PRJ_OUTPUT_DIR}
-
-	@echo "Finished cleaning the target '$@' for project '${PRJ_NAME}'"
 
 # Generic C/C++ files build target (Object generation)
 ${PRJ_OBJECTS_DIR}/%.o : $(PRJ_SOURCE_CODE)/%.cpp
