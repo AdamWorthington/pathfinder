@@ -23,7 +23,7 @@ all: $(CPP_OBJECTS)
 clean:
 	@echo "Executing target '$@' for project '${PRJ_NAME}'"
 
-	rm -rf ${PRJ_OBJECTS_DIR}
+	rm -rf ${PRJ_OUTPUT_DIR}
 
 	@echo "Finished cleaning the target '$@' for project '${PRJ_NAME}'"
 
